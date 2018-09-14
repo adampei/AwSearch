@@ -193,13 +193,32 @@
 
 -(void)setInsetsTxtfield:(UIEdgeInsets)insetsTxtfield{
     _insetsTxtfield = insetsTxtfield;
-    self.txtField.backgroundColor = [UIColor orangeColor];
     [self.txtField mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.viewSearchBarBackground).with.offset(insetsTxtfield.left);
+        make.left.equalTo(self.imgSearchIcon.mas_right).with.offset(insetsTxtfield.left);
         make.top.equalTo(self.viewSearchBarBackground).with.offset(insetsTxtfield.top);
         make.right.equalTo(self.viewSearchBarBackground).with.offset(-insetsTxtfield.right);
         make.bottom.equalTo(self.viewSearchBarBackground).with.offset(-insetsTxtfield.bottom);
     }];
+}
+
+-(void)setColorTxtInput:(UIColor *)colorTxtInput{
+    _colorTxtInput = colorTxtInput;
+    self.txtField.textColor = colorTxtInput;
+}
+
+-(void)setColorBtnBg:(UIColor *)colorBtnBg{
+    _colorBtnBg = colorBtnBg;
+    [self.btnRight setBackgroundColor:colorBtnBg];
+}
+
+-(void)setImgBtn:(NSString *)imgBtn{
+    _imgBtn = imgBtn;
+    [self.btnRight setImage:[UIImage imageNamed:imgBtn] forState:UIControlStateNormal];
+}
+
+- (void)setImgBtnBg:(NSString *)imgBtnBg{
+    _imgBtnBg = imgBtnBg;
+    [self.btnRight setBackgroundImage:[UIImage imageNamed:imgBtnBg] forState:UIControlStateNormal];
 }
 
 -(void)setInsetsBtn:(UIEdgeInsets)insetsBtn{
@@ -215,3 +234,4 @@
 
 
 @end
+
