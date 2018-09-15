@@ -160,11 +160,17 @@
 -(void)setInsetsIcon:(UIEdgeInsets)insetsIcon{
     
     _insetsIcon = insetsIcon;
+    CGFloat width = self.sizeIconDefault.height;
+    CGFloat height = self.sizeIconDefault.width;
+    if (self.iconSize.height) {
+        height = self.iconSize.height;
+        width = self.iconSize.width;
+    }
     [self.imgSearchIcon mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.viewSearchBarBackground).with.offset(insetsIcon.left);
         make.centerY.equalTo(self.viewSearchBarBackground.mas_centerY);
-        make.height.equalTo(@(self.sizeIconDefault.height));
-        make.width.equalTo(@(self.sizeIconDefault.width));
+        make.height.equalTo(@(height));
+        make.width.equalTo(@(width));
     }];
 }
 
