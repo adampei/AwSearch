@@ -213,6 +213,11 @@
     [self.btnRight setImage:[UIImage imageNamed:imgBtn] forState:UIControlStateNormal];
 }
 
+- (void)setIsShowRightBtn:(BOOL)isShowRightBtn {
+    _isShowRightBtn = isShowRightBtn;
+    self.btnRight.hidden = !isShowRightBtn;
+}
+
 - (void)setImgBtnBg:(NSString *)imgBtnBg{
     _imgBtnBg = imgBtnBg;
     [self.btnRight setBackgroundImage:[UIImage imageNamed:imgBtnBg] forState:UIControlStateNormal];
