@@ -55,7 +55,7 @@ typedef NS_ENUM(NSUInteger, KKEYBOARDRETURNTYPE) {
 @property (nonatomic, copy) NSString *titleBtn;
 /// 按钮标题颜色
 @property (nonatomic, strong) UIColor *colorTitleBtn;
-/// 右侧按钮边距 上下不可用,左(距离searchbgview)右可用
+/// 右侧按钮边距
 @property (nonatomic, assign) UIEdgeInsets insetsBtn;
 /// 按钮背景色
 @property (nonatomic, strong) UIColor *colorBtnBg;

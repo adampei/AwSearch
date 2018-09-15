@@ -20,7 +20,6 @@
 
 @implementation AwSearch
 
-
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         [self initUI];
@@ -93,7 +92,6 @@
     }
 }
 
-
 #pragma mark - events
 -(void)clickRightBtn:(UIButton *)sender{
     
@@ -102,9 +100,8 @@
     }
 }
 
-
-
 #pragma mark - getter & setter
+
 -(void)setColorSearchBg:(UIColor *)colorSearchBg{
     _colorSearchBg = colorSearchBg;
     self.viewSearchBarBackground.backgroundColor = colorSearchBg;
@@ -226,12 +223,10 @@
     [self.btnRight mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.viewSearchBarBackground.mas_right).with.offset(insetsBtn.left);
         make.right.equalTo(self).with.offset(-insetsBtn.right);
-        make.centerY.equalTo(self.viewSearchBarBackground.mas_centerY);
-        make.height.equalTo(self.mas_height);
+        make.top.equalTo(self).with.offset(insetsBtn.top);
+        make.bottom.equalTo(self).with.offset(-insetsBtn.bottom);
     }];
 }
-
-
 
 @end
 
