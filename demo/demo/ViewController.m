@@ -19,22 +19,52 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    AwSearch * searchView = [[AwSearch alloc] initWithFrame:CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, 55)];
-    searchView.iconName = @"icon_search";
+    self.view.backgroundColor = [UIColor cyanColor];
+    
+    AwSearch * searchView = [[AwSearch alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, 55)];
+    // 设置icon
+    // 图片
+    searchView.iconName = @"icon_search"; //search_icon_white search_icon
+    // icon大小
     searchView.iconSize = CGSizeMake(18, 18);
-    searchView.fontBtn = 10;
+    // icon 位置
+    //    searchView.insetsIcon = UIEdgeInsetsMake(0, 30, 0, 0);
     
-    [searchView setClickSearchCallback:^(NSString *keyword) {
-        NSLog(@"点击键盘搜索: %@",keyword);
-    }];
+    // 设置placehodler
+    searchView.placeHolder = @"请输入要搜索的内容";
+    /// placeholder 颜色
+    //    searchView.colorPlaceholder = [UIColor yellowColor];
+    /// placeholder 字体大小
+    searchView.cusFontPlaceHolder = 20;
     
-    [searchView setClickRightBtnCallback:^{
-        NSLog(@"点击了取消");
-    }];
+    //设置搜索框背景色
+    //    searchView.colorSearchBg = [UIColor orangeColor];
+    /// 圆角
+    //    searchView.raidus = 10;
+    /// 设置灰色背景边距
+    //    searchView.insetsSearchBg = UIEdgeInsetsMake(0, 0, 0, 0);
     
-    [searchView setTxtfieldEditingCallback:^(NSString *text) {
-        NSLog(@"输入的内容: %@", text);
-    }];
+    /// 设置txtfield边距 左侧距离icon 其他距离灰色背景
+    //    searchView.insetsTxtfield = UIEdgeInsetsMake(10, 10, 20, 50);
+    // textfield 字体大小
+    //    searchView.cusFontTxt = 20;
+    // textfield 字体颜色
+    //    searchView.colorTxtInput = [UIColor redColor];
+    
+    /// 按钮设置
+    // 标题
+    searchView.titleBtn = @"确定";
+    /// 颜色
+    //    searchView.colorTitleBtn = [UIColor redColor];
+    
+    /// 按钮图片
+    //    searchView.imgBtn = @"search_icon_white";
+    /// 按钮背景图片
+    //    searchView.imgBtnBg = @"search_icon";
+    /// 按钮背景色
+//    searchView.colorBtnBg = [UIColor redColor];
+    /// 按钮边距
+//    searchView.insetsBtn = UIEdgeInsetsMake(5, 10, 10, 20);
     
     [self.view addSubview:searchView];
 }
