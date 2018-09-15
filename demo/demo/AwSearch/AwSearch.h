@@ -65,6 +65,8 @@ typedef NS_ENUM(NSUInteger, KKEYBOARDRETURNTYPE) {
 @property (nonatomic, copy) NSString *imgBtn;
 /// 设置按钮字体大小
 @property (nonatomic, assign) CGFloat fontBtn;
+/// 是否显示右侧btn
+@property (nonatomic, assign) BOOL isShowRightBtn;
 
 #pragma mark - events
 
