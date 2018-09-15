@@ -22,6 +22,7 @@
     AwSearch * searchView = [[AwSearch alloc] initWithFrame:CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, 55)];
     searchView.iconName = @"icon_search";
     searchView.iconSize = CGSizeMake(18, 18);
+    searchView.fontBtn = 10;
     
     [searchView setClickSearchCallback:^(NSString *keyword) {
         NSLog(@"点击键盘搜索: %@",keyword);

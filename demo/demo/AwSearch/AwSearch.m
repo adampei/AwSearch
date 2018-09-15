@@ -218,6 +218,11 @@
     [self.btnRight setBackgroundImage:[UIImage imageNamed:imgBtnBg] forState:UIControlStateNormal];
 }
 
+- (void)setFontBtn:(CGFloat)fontBtn{
+    _fontBtn = fontBtn;
+    self.btnRight.titleLabel.font = [UIFont systemFontOfSize:fontBtn];
+}
+
 -(void)setInsetsBtn:(UIEdgeInsets)insetsBtn{
     _insetsBtn = insetsBtn;
     [self.btnRight mas_remakeConstraints:^(MASConstraintMaker *make) {
