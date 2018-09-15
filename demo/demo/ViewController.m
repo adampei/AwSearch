@@ -22,6 +22,7 @@
     self.view.backgroundColor = [UIColor cyanColor];
     
     AwSearch * searchView = [[AwSearch alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, 55)];
+    searchView.isFirstResponser = NO;
     // 是否展示右侧btn
 //    searchView.isShowRightBtn = NO;
     // 设置icon

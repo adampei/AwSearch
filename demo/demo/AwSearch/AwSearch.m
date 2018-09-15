@@ -174,6 +174,13 @@
     }];
 }
 
+- (void)setIsFirstResponser:(BOOL)isFirstResponser {
+    _isFirstResponser = isFirstResponser;
+    if (!isFirstResponser) {
+        [self.txtField resignFirstResponder];
+    }
+}
+
 -(void)setIconSize:(CGSize)iconSize{
     _iconSize = iconSize;
     [self.imgSearchIcon mas_remakeConstraints:^(MASConstraintMaker *make) {

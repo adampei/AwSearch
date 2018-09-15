@@ -50,6 +50,8 @@ typedef NS_ENUM(NSUInteger, KKEYBOARDRETURNTYPE) {
 @property (nonatomic, strong) UIColor *colorPlaceholder;
 /// placeholder 字体大小
 @property (nonatomic, assign) CGFloat cusFontPlaceHolder;
+/// 是否作为键盘第一响应者,默认是
+@property (nonatomic, assign) BOOL isFirstResponser;
 
 /// 按钮标题
 @property (nonatomic, copy) NSString *titleBtn;
