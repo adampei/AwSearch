@@ -38,7 +38,7 @@ searchView.iconName = @"search_icon_white"; //search_icon_white search_icon
 // 设置placehodler
 searchView.placeHolder = @"请输入要搜索的内容";
 ```
-*设置placeholder颜色`colorPlaceholder`
+* 设置placeholder颜色`colorPlaceholder`
 ```objc
 /// placeholder 颜色
 //searchView.colorPlaceholder = [UIColor yellowColor];
