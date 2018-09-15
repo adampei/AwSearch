@@ -147,5 +147,25 @@ searchView.titleBtn = @"确定";
 //searchView.insetsBtn = UIEdgeInsetsMake(5, 10, 10, 20);
 ````
 
+* 按钮字体大小`fontBtn`
+
 ![image](https://github.com/adampei/AwSearch/blob/master/images/e_1.png)
 ![image](https://github.com/adampei/AwSearch/blob/master/images/e_2.png)
+
+## 事件回调
+
+* 点击键盘中的搜索回调
+* 其中设置键盘右下角样式通过属性`returnType`
+```objc
+[searchView setClickSearchCallback:^(NSString *keyword) {
+    NSLog(@"点击键盘搜索: %@",keyword);
+}];
+// 点击右侧按钮回调
+[searchView setClickRightBtnCallback:^{
+    NSLog(@"点击右侧按钮");
+}];
+// 每输入一个文字的回调
+[searchView setTxtfieldEditingCallback:^(NSString *text) {
+    NSLog(@"输入的内容: %@", text);
+}];
+```
