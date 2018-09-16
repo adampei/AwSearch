@@ -91,7 +91,7 @@ searchView.cusFontPlaceHolder = 20;
 ```objc
 // textfield 字体颜色
 //searchView.colorTxtInput = [UIColor redColor];
-``
+```
 
 * 字体大小`cusFontTxt`
 
@@ -147,7 +147,7 @@ searchView.titleBtn = @"确定";
 ```objc
 /// 按钮边距
 //searchView.insetsBtn = UIEdgeInsetsMake(5, 10, 10, 20);
-````
+```
 
 * 按钮字体大小`fontBtn`
 
