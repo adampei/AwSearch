@@ -71,7 +71,10 @@ typedef NS_ENUM(NSUInteger, KKEYBOARDRETURNTYPE) {
 @property (nonatomic, assign) BOOL isShowRightBtn;
 
 #pragma mark - events
-
+/// 键盘隐藏事件
+@property (nonatomic, copy) void(^keyboardHideCallback)(void);
+/// 键盘唤起事件
+@property (nonatomic, copy) void(^touchSearchTextCallabck)(void);
 /// 键盘上点击搜索事件
 @property (nonatomic, copy) void(^clickSearchCallback)(NSString *keyword);
 /// txtfield编辑回调

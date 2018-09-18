@@ -72,7 +72,8 @@
     }];
     
     UITextField * txtField = [UITextField new];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardDidShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardDidHide:) name:UIKeyboardWillHideNotification object:nil];
     [txtField becomeFirstResponder];
     txtField.clearButtonMode = UITextFieldViewModeWhileEditing;
     self.txtField = txtField;
@@ -93,6 +94,20 @@
 }
 
 #pragma mark - events
+- (void)keyBoardDidHide:(NSNotification *)noti {
+    
+    if (self.keyboardHideCallback) {
+        self.keyboardHideCallback();
+    }
+}
+
+- (void)keyBoardDidShow:(NSNotification*)notifiction {
+    
+    if (self.touchSearchTextCallabck) {
+        self.touchSearchTextCallabck();
+    }
+}
+
 -(void)clickRightBtn:(UIButton *)sender{
     
     if (self.clickRightBtnCallback) {

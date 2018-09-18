@@ -10,7 +10,7 @@
 #import "AwSearch.h"
 
 @interface ViewController ()
-
+@property (nonatomic, strong) AwSearch * searchView;
 @end
 
 @implementation ViewController
@@ -23,6 +23,7 @@
     
     AwSearch * searchView = [[AwSearch alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, 55)];
     searchView.isFirstResponser = NO;
+    self.searchView = searchView;
     // 是否展示右侧btn
 //    searchView.isShowRightBtn = NO;
     // 设置icon
@@ -68,10 +69,23 @@
 //    searchView.colorBtnBg = [UIColor redColor];
     /// 按钮边距
 //    searchView.insetsBtn = UIEdgeInsetsMake(5, 10, 10, 20);
+    [searchView setTxtfieldEditingCallback:^(NSString *text) {
+        
+    }];
     
+    [searchView setKeyboardHideCallback:^{
+        NSLog(@"ssss");
+    }];
+    
+    [searchView setTouchSearchTextCallabck:^{
+        NSLog(@"aaaa");
+    }];
     [self.view addSubview:searchView];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.searchView endEditing:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
