@@ -30,6 +30,9 @@
 -(void)initUI{
     
     // 默认颜色
+    UIControl * bgControl = [[UIControl alloc] initWithFrame:self.bounds];
+    [self addSubview:bgControl];
+    [bgControl addTarget:self action:@selector(touchSearchIcon) forControlEvents:UIControlEventTouchUpInside];
     self.backgroundColor = [UIColor whiteColor];
     UIView * viewSearchBarBackground = [UIView new];
     viewSearchBarBackground.layer.cornerRadius = 5;
@@ -57,6 +60,12 @@
         make.width.equalTo(@(self.sizeIconDefault.width));
         make.height.equalTo(@(self.sizeIconDefault.height));
     }];
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(touchSearchIcon)];
+    imgSearchIcon.userInteractionEnabled = YES;
+    self.viewSearchBarBackground.userInteractionEnabled = YES;
+    [imgSearchIcon addGestureRecognizer:tap];
+    [self addGestureRecognizer:tap];
+    [self.viewSearchBarBackground addGestureRecognizer:tap];
     
     UIButton * btnRight = [UIButton new];
     [btnRight setTitle:@"取消" forState:UIControlStateNormal];
@@ -94,6 +103,10 @@
 }
 
 #pragma mark - events
+- (void)touchSearchIcon {
+    [self.txtField becomeFirstResponder];
+}
+
 - (void)keyBoardDidHide:(NSNotification *)noti {
     
     if (self.keyboardHideCallback) {
