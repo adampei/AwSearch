@@ -1,2 +1,4 @@
 language: objective-c
+xcode_project: demo/demo.xcodeproj
+xcode_scheme: demo
 
